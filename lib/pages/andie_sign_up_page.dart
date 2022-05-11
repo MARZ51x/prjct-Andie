@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'andie_sign_up_page2.dart';
 import 'andie_sign_up_page3.dart';
@@ -15,7 +14,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  List<String> items = ['Male', 'Female',];
+  List<String> items = [
+    'Male',
+    'Female',
+  ];
   String? selectedItem = 'Male';
 
   @override
@@ -24,12 +26,11 @@ class _SignUpState extends State<SignUp> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/background1.png'),
-              fit: BoxFit.cover,
-            )
-        ),
+          image: AssetImage('assets/background1.png'),
+          fit: BoxFit.cover,
+        )),
         child: Row(
-          children:  [
+          children: [
             Expanded(
               flex: 1,
               child: Container(
@@ -86,15 +87,20 @@ class _SignUpState extends State<SignUp> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: (){
-                              Navigator.push(context, PageRouteBuilder(pageBuilder: (BuildContext context, Animation animation,
-                                  Animation secondaryAnimation)=>AndieSignUp2(),
-                                  transitionDuration: Duration(seconds: 0)),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                PageRouteBuilder(
+                                    pageBuilder: (BuildContext context,
+                                            Animation animation,
+                                            Animation secondaryAnimation) =>
+                                        const AndieSignUp2(),
+                                    transitionDuration:
+                                        const Duration(seconds: 0)),
                               );
                             },
                             child: const Text('Move to page 2 new'),
                           ),
-
                         ],
                       ),
                     ),
@@ -103,7 +109,6 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
 
-
             // ------------------Right Pane Configurations-------------------
 
             Expanded(
@@ -111,9 +116,8 @@ class _SignUpState extends State<SignUp> {
               child: Container(
                 margin: const EdgeInsets.all(50),
                 decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(20))
-                ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -123,7 +127,8 @@ class _SignUpState extends State<SignUp> {
                       child: Center(
                         child: Container(
                           margin: const EdgeInsets.only(top: 20, bottom: 10),
-                          child: const Text('Sign-Up as ANDIE!',
+                          child: const Text(
+                            'Sign-Up as ANDIE!',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w900,
@@ -135,29 +140,33 @@ class _SignUpState extends State<SignUp> {
                     Expanded(
                       flex: 10,
                       child: Container(
-                          margin: const EdgeInsets.only(top: 5, left: 40, right: 40),
-                          child: const TextField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: 'First Name',
-                            ),
-                          ),),
+                        margin:
+                            const EdgeInsets.only(top: 5, left: 40, right: 40),
+                        child: const TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: 'First Name',
+                          ),
+                        ),
+                      ),
                     ),
                     Expanded(
                       flex: 10,
                       child: Container(
-                        margin: const EdgeInsets.only(top: 15, left: 40, right: 40),
+                        margin:
+                            const EdgeInsets.only(top: 15, left: 40, right: 40),
                         child: const TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Last Name',
                           ),
-                        ),),
+                        ),
+                      ),
                     ),
                     Expanded(
                       flex: 10,
                       child: Container(
-                        margin: EdgeInsets.only(top: 5, left: 45),
+                        margin: const EdgeInsets.only(top: 5, left: 45),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -170,29 +179,32 @@ class _SignUpState extends State<SignUp> {
                                   value: selectedItem,
                                   items: items
                                       .map((item) => DropdownMenuItem(
-                                      value: item,
-                                      child: Text(item,
-                                        style: const TextStyle(
-                                            fontSize: 20,
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold
-                                        )
-                                        ,)
-                                  ))
+                                          value: item,
+                                          child: Text(
+                                            item,
+                                            style: const TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold),
+                                          )))
                                       .toList(),
-                                  onChanged: (item)=> setState(()=>selectedItem = item),
+                                  onChanged: (item) =>
+                                      setState(() => selectedItem = item),
                                 ),
                               ),
                             ),
-                            Expanded(flex:3,
+                            Expanded(
+                                flex: 3,
                                 child: Container(
-                                  margin: const EdgeInsets.only(top: 5, left: 40, right: 40),
+                                  margin: const EdgeInsets.only(
+                                      top: 5, left: 40, right: 40),
                                   child: const TextField(
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(),
                                       hintText: 'Age',
                                     ),
-                                  ),)),
+                                  ),
+                                )),
                           ],
                         ),
                       ),
@@ -200,73 +212,80 @@ class _SignUpState extends State<SignUp> {
                     Expanded(
                       flex: 10,
                       child: Container(
-                        margin: const EdgeInsets.only(top:15,left: 40, right: 40),
+                        margin:
+                            const EdgeInsets.only(top: 15, left: 40, right: 40),
                         child: const TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Contact Number',
                           ),
-                        ),),
+                        ),
+                      ),
                     ),
                     Expanded(
                       flex: 5,
                       child: Container(
-                        margin: const EdgeInsets.only(top:1,left: 40, right: 50),
+                        margin:
+                            const EdgeInsets.only(top: 1, left: 40, right: 50),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            IconButton(onPressed: (){},
-                                icon: const Icon(Icons.arrow_circle_right_rounded,
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.arrow_circle_right_rounded,
                                 size: 40,
-                                ),
-                   ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ),
                     const Expanded(
-                      flex:10,
+                      flex: 10,
                       child: Center(
-                        child: Text('or',
+                        child: Text(
+                          'or',
                           style: TextStyle(
                             fontSize: 25,
                           ),
-                          ),
+                        ),
                       ),
                     ),
                     Expanded(
                       flex: 10,
                       child: Container(
-                        margin: EdgeInsets.only(left: 40, right: 40, bottom: 30 ),
+                        margin: const EdgeInsets.only(
+                            left: 40, right: 40, bottom: 30),
                         child: OutlinedButton(
-                          onPressed: (){
-                            Navigator.push(context, PageRouteBuilder(pageBuilder: (BuildContext context, Animation animation,
-                                Animation secondaryAnimation)=>const AndieSignUp3(), //Change here to open Google Login
-                                transitionDuration: const Duration(seconds: 0)),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              PageRouteBuilder(
+                                  pageBuilder: (BuildContext context,
+                                          Animation animation,
+                                          Animation secondaryAnimation) =>
+                                      const AndieSignUp3(), //Change here to open Google Login
+                                  transitionDuration:
+                                      const Duration(seconds: 0)),
                             );
                           },
-
-                          child: const Text('Sign Up Using Google',
+                          child: const Text(
+                            'Sign Up Using Google',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
                           ),
-
                         ),
                       ),
                     ),
 
-
-
-
-                        // BUTTON FOR GOOGLE SIGN IN
-
+                    // BUTTON FOR GOOGLE SIGN IN
                   ],
                 ),
               ),
             )
-
           ],
         ),
       ),

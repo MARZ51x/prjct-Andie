@@ -1,16 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prjct_andie/checkbox/checkbox_state.dart';
 
 void main() {
   runApp(MaterialApp(
-
       theme: ThemeData().copyWith(
-        primaryColor: Colors.red,
-        unselectedWidgetColor: Colors.black
-      ),
-      home: const AndieSignUp3())
-  );
+          primaryColor: Colors.red, unselectedWidgetColor: Colors.black),
+      home: const AndieSignUp3()));
 }
 
 class AndieSignUp3 extends StatefulWidget {
@@ -21,8 +16,6 @@ class AndieSignUp3 extends StatefulWidget {
 }
 
 class _AndieSignUp3State extends State<AndieSignUp3> {
-
-
   final notifications = [
     CheckBoxState(title: 'PANDAY'),
     CheckBoxState(title: 'PLUMBER'),
@@ -35,7 +28,7 @@ class _AndieSignUp3State extends State<AndieSignUp3> {
     CheckBoxState(title: 'HOUSE KEEPER'),
     CheckBoxState(title: 'LAUNDERER'),
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,13 +101,13 @@ class _AndieSignUp3State extends State<AndieSignUp3> {
                             ],
                           ),
                           Container(
-                            margin: const EdgeInsets.only(
+                              margin: const EdgeInsets.only(
                                   top: 20, left: 40, right: 40, bottom: 10),
                               child: const Text(
-                                  'Select the skill/s that best decribes your Talents and Capabilities',
-                                  style: TextStyle(
-                                    fontSize: 25,
-                                  ),
+                                'Select the skill/s that best decribes your Talents and Capabilities',
+                                style: TextStyle(
+                                  fontSize: 25,
+                                ),
                               )),
                           Container(
                             margin: const EdgeInsets.only(
@@ -122,42 +115,47 @@ class _AndieSignUp3State extends State<AndieSignUp3> {
                             width: 1200,
                             height: 250,
                             child: GridView(
-                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 3,
                                 childAspectRatio: 10,
                                 crossAxisSpacing: 50,
                                 mainAxisSpacing: 10,
                               ),
                               children: [
-                                ...notifications.map(buildSingleCheckBox).toList(),
+                                ...notifications
+                                    .map(buildSingleCheckBox)
+                                    .toList(),
                               ],
-
                             ),
                           ),
                           Center(
                             child: Container(
-                                margin: const EdgeInsets.only(
-                                    top: 5, left: 40, right: 40, bottom: 30),
-                                child:OutlinedButton(
-                                  onPressed: (){
-                                    Navigator.push(context, PageRouteBuilder(pageBuilder: (BuildContext context, Animation animation,
-                                        Animation secondaryAnimation)=>const AndieSignUp3(),
-                                        transitionDuration: const Duration(seconds: 0)),
-                                    );
-                                  },
-                                  child: const Text(' I''m Done!',
+                              margin: const EdgeInsets.only(
+                                  top: 5, left: 40, right: 40, bottom: 30),
+                              child: OutlinedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageRouteBuilder(
+                                        pageBuilder: (BuildContext context,
+                                                Animation animation,
+                                                Animation secondaryAnimation) =>
+                                            const AndieSignUp3(),
+                                        transitionDuration:
+                                            const Duration(seconds: 0)),
+                                  );
+                                },
+                                child: const Text(
+                                  ' I' 'm Done!',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                   ),
-                                  ),
-
                                 ),
-
+                              ),
                             ),
                           ),
-
-
                         ],
                       ),
                     ),
@@ -171,14 +169,13 @@ class _AndieSignUp3State extends State<AndieSignUp3> {
         ),
       ),
     );
-
   }
 
   Widget buildSingleCheckBox(CheckBoxState checkbox) => CheckboxListTile(
-    controlAffinity: ListTileControlAffinity.leading,
-    activeColor: Colors.orangeAccent,
-    value: checkbox.value,
-    title: Text(checkbox.title),
-    onChanged: (value) => setState(() =>checkbox.value =value!),
-  );
+        controlAffinity: ListTileControlAffinity.leading,
+        activeColor: Colors.orangeAccent,
+        value: checkbox.value,
+        title: Text(checkbox.title),
+        onChanged: (value) => setState(() => checkbox.value = value!),
+      );
 }

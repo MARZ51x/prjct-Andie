@@ -91,15 +91,20 @@ class _homePageState extends State<homePage> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: (){
-                              Navigator.push(context, PageRouteBuilder(pageBuilder: (BuildContext context, Animation animation,
-                                  Animation secondaryAnimation)=>SignUp(),
-                                  transitionDuration: Duration(seconds: 0)),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                PageRouteBuilder(
+                                    pageBuilder: (BuildContext context,
+                                            Animation animation,
+                                            Animation secondaryAnimation) =>
+                                        const SignUp(),
+                                    transitionDuration:
+                                        const Duration(seconds: 0)),
                               );
                             },
                             child: const Text('Move to page 2 new'),
                           ),
-
                         ],
                       ),
                     ),

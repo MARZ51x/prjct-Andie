@@ -20,14 +20,13 @@ class _AndieSignUp2State extends State<AndieSignUp2> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/background1.png'),
-              fit: BoxFit.cover,
-            )
-        ),
+          image: AssetImage('assets/background1.png'),
+          fit: BoxFit.cover,
+        )),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children:  [
+          children: [
             Expanded(
               flex: 1,
               child: Container(
@@ -84,15 +83,20 @@ class _AndieSignUp2State extends State<AndieSignUp2> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: (){
-                              Navigator.push(context, PageRouteBuilder(pageBuilder: (BuildContext context, Animation animation,
-                                  Animation secondaryAnimation)=>AndieSignUp3(),
-                                  transitionDuration: Duration(seconds: 0)),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                PageRouteBuilder(
+                                    pageBuilder: (BuildContext context,
+                                            Animation animation,
+                                            Animation secondaryAnimation) =>
+                                        const AndieSignUp3(),
+                                    transitionDuration:
+                                        const Duration(seconds: 0)),
                               );
                             },
                             child: const Text('Move to page 2 new'),
                           ),
-
                         ],
                       ),
                     ),
@@ -101,9 +105,8 @@ class _AndieSignUp2State extends State<AndieSignUp2> {
               ),
             ),
 
-
             // ------------------Right Pane Configurations-------------------
-          /*  Expanded(
+            /*  Expanded(
               flex: 1,
               child: Container(
                 color: Colors.,
@@ -134,19 +137,20 @@ class _AndieSignUp2State extends State<AndieSignUp2> {
             Expanded(
               /*flex:1,*/
               child: Container(
-                margin: const EdgeInsets.only(top: 50, left: 50,right: 50,bottom: 70),
+                margin: const EdgeInsets.only(
+                    top: 50, left: 50, right: 50, bottom: 70),
                 decoration: const BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20))
-                ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Expanded(
-                      flex:1,
+                      flex: 1,
                       child: Container(
                         margin: const EdgeInsets.only(top: 20),
-                        child: const Text('Sign-Up as ANDIE!',
+                        child: const Text(
+                          'Sign-Up as ANDIE!',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w900,
@@ -155,47 +159,56 @@ class _AndieSignUp2State extends State<AndieSignUp2> {
                       ),
                     ),
                     Expanded(
-                      flex:1,
+                      flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.only(top: 30, left: 40, right: 40),
+                        margin:
+                            const EdgeInsets.only(top: 30, left: 40, right: 40),
                         child: const TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Email',
                           ),
-                        ),),
+                        ),
+                      ),
                     ),
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.only(top: 30, left: 40, right: 40),
+                        margin:
+                            const EdgeInsets.only(top: 30, left: 40, right: 40),
                         child: const TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Password',
                           ),
-                        ),),
+                        ),
+                      ),
                     ),
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.only(top:15,left: 40, right: 40),
+                        margin:
+                            const EdgeInsets.only(top: 15, left: 40, right: 40),
                         child: const TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             hintText: 'Confirm Password',
                           ),
-                        ),),
+                        ),
+                      ),
                     ),
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.only(top:1,left: 40, right: 50),
+                        margin:
+                            const EdgeInsets.only(top: 1, left: 40, right: 50),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            IconButton(onPressed: (){},
-                              icon: const Icon(Icons.arrow_circle_right_rounded,
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.arrow_circle_right_rounded,
                                 size: 40,
                               ),
                             ),
